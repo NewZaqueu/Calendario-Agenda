@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+    <!-- PERSONAL CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Meu 1º Calendario!</title>
+  </head>
+  <body class="d-flex bg-secondary p-md-2">
+    <div class="container bg-light">
+        <div class="row position-relative h-100" id="calendario-pianel">
+
+            <div id="calendario" class="col-12 col-lg-8 col order-lg-1 bg-light d-flex flex-column h-100">
+                <div class="">
+                    <div class="d-flex align-items-center">
+
+                        <div id="ano" class="mr-auto ml-2">
+                            <p class="pt-2">
+                                <i class="fas fa-chevron-left px-1"
+                                onclick="calendario.selecionarAno(-1)"></i>
+                                <span id="input-calendario-ano"></span>
+                                <i class="fas fa-chevron-right px-1"
+                                onclick="calendario.selecionarAno(1)"></i>
+                               </p>
+                        </div>
+
+                        <div id="hoje" class="">
+                            <button class="btn btn-dark mr-2"
+                            onclick="calendario.dataHoje()">HOJE</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="mes" class="text-center">
+                    <h3 class= "display-3 mb-0">
+                     <i class="float-left fas fa-chevron-circle-left ml-2"
+                     onclick="calendario.selecionarMes(-1)"></i>
+                         <span id="input-calendario-mes"></span>
+                     <i class="float-right fas fa-chevron-circle-right mr-2"
+                     onclick="calendario.selecionarMes(1)"></i>
+                    </h3>
+                    <h5 class="mt-1" id="input-calendario-fulldate"></h5>
+                    <h5 class="mt-1" id="input-calendario-fulldate-number"></h5>
+                </div>
+
+                <div id="dias" class="table-responsive">
+                    <table class="table table-white table-striped text-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Dom</th>
+                                <th>Seg</th>
+                                <th>Ter</th>
+                                <th>Qua</th>
+                                <th>Qui</th>
+                                <th>Sex</th>
+                                <th>Sab</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="start-row">
+                                <td class="d1" id="1"></td>
+                                <td class="d2" id="2"></td>
+                                <td class="d3" id="3"></td>
+                                <td class="d4" id="4"></td>
+                                <td class="d5" id="5"></td>
+                                <td class="d6" id="6"></td>
+                                <td class="d7" id="7"></td>
+                            </tr>
+                            <tr>
+                                <td id="8"></td>
+                                <td id="9"></td>
+                                <td id="10"></td>
+                                <td id="11"></td>
+                                <td id="12"></td>
+                                <td id="13"></td>
+                                <td id="14"></td>
+                            </tr>
+                            <tr>
+                                <td id="15"></td>
+                                <td id="16"></td>
+                                <td id="17"></td>
+                                <td id="18"></td>
+                                <td id="19"></td>
+                                <td id="20"></td>
+                                <td id="21"></td>
+                            </tr>
+                            <tr>
+                                <td id="22"></td>
+                                <td id="23"></td>
+                                <td id="24"></td>
+                                <td id="25"></td>
+                                <td id="26"></td>
+                                <td id="27"></td>
+                                <td id="28"></td>
+                            </tr>
+                            <tr>
+                                <td id="29"></td>
+                                <td id="30"></td>
+                                <td id="31"></td>
+                                <td id="32"></td>
+                                <td id="33"></td>
+                                <td id="34"></td>
+                                <td id="35"></td>
+                            </tr>
+                            <tr>
+                                <td id="36"></td>
+                                <td id="37"></td>
+                                <td id="38"></td>
+                                <td id="39"></td>
+                                <td id="40"></td>
+                                <td id="41"></td>
+                                <td id="42"></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    
+                </div>
+
+            </div>
+
+            <div id="painel" class="bg-info col-12 col-lg-4 d-flex flex-column justify-content-center align-self-center align-self-lg-stretch">
+
+                <div id="refresh" class="d-flex justify-content-between p-3">
+                    <i onclick="ocultarCalendario()"
+                    type="button" class="fas fa-times-circle text-dark d-lg-none"></i>
+
+                    <i onclick="listaTarefas.deletarTarefasDia()"
+                    type="button" class="fas fa-trash-alt text-dark"></i>
+                </div>
+
+                <div class="container flex-grow-1 d-flex justify-content-center" id="date-atividades">
+                    <div class="align-self-lg-center">
+                        <div class="">
+
+                            <div id="date" class="p-2 text-center">
+                                <h1 class="display-3" id="input-painel-date"></h1>
+                                <h3 id="input-painel-day"></h3>
+                            </div>
+
+                            <div id="atvidades" class="p-3">
+                                <ul class="list-group border-rounded" id="lista-atividades">
+                                    <!-- exemplo de configuração das tarefas -->
+                                    <!-- <li class="list-group-item">
+                                        <i class="far fa-circle float-left"></i>
+                                        <p class="d-inline ml-2">Fazer compras</p>
+                                        <i class="far fa-trash-alt float-right"></i>
+                                    </li>  -->
+                                </ul>
+                                <div class="input-group mt-1">
+                                        <div class="input-group-prepend">
+                                            <button id="btn-add"
+                                            onclick="listaTarefas.verificarAtividades()" class="input-group-text"><i class="fas fa-plus-circle"></i></button>
+                                        </div>
+                                    <input id="add-atividade" type="text" class="form-control" placeholder="Add atividade" size="20">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+  <div class="modal fade" id="warningModals" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-msg"></div>
+        <div class="modal-footer">
+            <button id="btn-close-modal" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

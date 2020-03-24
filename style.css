@@ -1,0 +1,208 @@
+body
+{
+    height:100vh;    
+}
+
+i{
+    cursor: pointer;
+}
+
+/* CALENDARIO */
+
+#calendario{
+    z-index: 1;
+    padding:0px;
+}
+
+#painel{
+    z-index: 0;
+    position: absolute;
+}
+
+#ano{
+    font-weight: bolder;
+}
+
+#hoje button{
+    padding:3px 5px;
+}
+
+.ocultar-calendario{ 
+    
+    z-index: 9999!important;
+    height:100vh;
+}
+
+
+/* ------------------------- */
+#date{
+    color:#fff;
+    font-weight:bolder;
+    text-shadow: 2px 2px 2px #000;
+}
+
+#painel i {
+    line-height:1.55;
+}
+
+
+#date h1{
+    letter-spacing: .2em;
+}
+
+/* CALENDARIO */
+
+.inativo{
+    text-decoration:line-through !important;
+    color:#999 !important;
+}
+
+/* tbody tr td{
+    cursor: pointer !important;
+} */
+
+tbody tr td:hover{
+    color:#0275d8 !important;
+    cursor: pointer;
+}
+
+.busy{
+    border-bottom: 2px #0275d8 solid !important;
+    font-weight: bolder;
+}
+
+.underline{
+    background:rgba(91, 192, 222,0.5);
+    font-weight: bolder;
+}
+
+.marcador-tarefas{
+    top:0;
+    right:0;
+    padding:10px 5px;
+    position: absolute;
+}
+
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+
+    h1#input-painel-date {
+        font-size: 4em;
+    }
+
+    #mes .display-3{
+        font-size: 2.5em;
+        padding-top: 0px;
+    }
+
+
+    h5{
+        font-size: 1.5em;
+    }
+
+    table td{
+        padding:1px 5px !important;
+    }
+
+    table th{
+        padding:5px !important;
+    }
+   
+
+    .marcador-tarefas{
+        padding:1px;
+        position: absolute;
+        /* font-size:0.7em; */
+    }
+
+    input{
+        font-size: 0.8em;
+    }
+
+    ::-webkit-input-placeholder {
+        font-size: 0.8em;
+      }
+
+    
+ }
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    #mes h3.display-3{
+        font-size: 2.65em;
+        line-height: 0.8em;
+    }
+
+    table td{
+        padding:7px !important;
+    }
+
+    table th{
+        padding:5px !important;
+    }
+    
+}      
+
+/* // Medium devices (tablets, less than 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    body{
+        font-size: 1.2em;
+    }
+
+}
+
+/* // Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    body{
+        font-size: 1.2em;
+    }
+
+    #painel{
+        position: relative;
+    }
+
+    h5{
+        font-size: 1.6em;
+    }
+
+    h3{
+        font-size: 1.2em;
+    }
+    
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    body{
+        font-size: 1.3em;
+    }   
+
+    #painel{
+        position: relative;
+    }
+
+    .display-3{
+        font-size:4.5em;
+        padding:20px 5px;
+    }
+
+    h5 {
+        font-size: 1.6em;
+    }
+
+    h3{
+        font-size: 1.5em;
+    }
+ 
+    table td{
+        padding:16px !important;
+    }
+
+    table th{
+        padding:18px !important;
+    }
+   
+}
